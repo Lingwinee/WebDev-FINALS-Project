@@ -19,6 +19,12 @@
   left: 20%;
   top: 30%;
 }
+.IKO-Bin-Title{
+  font-size: 20%;
+}
+.IKO-Bin-Subtext{
+  font-size: 10%;
+}
 
 /* ABOUT SECTION */
 .column-container {
