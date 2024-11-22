@@ -23,6 +23,10 @@ header {
 
 .navbar {
     position: fixed;
+    /* FIX THE POSITION OF THE NAV */
+    left: 50%;
+    transform: translateX(-50%);
+    /* ---- */
     width: 65%;
     top: 0;
     display: flex;
