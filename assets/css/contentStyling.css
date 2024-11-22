@@ -21,7 +21,7 @@
   top: 30%;
 }
 .IKO-Bin-Title .IKO-Bin-Subtext .IKO-Bin-Text{
-  align-self: left;
+  text-align: left;
 }
 .IKO-Bin-Title{
   font-size: larger;
