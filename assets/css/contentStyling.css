@@ -30,6 +30,10 @@
   font-size: large;
 }
 
+.Home-Figure-Container img{
+  size: 50px;
+}
+
 /* -------------------------------------------------------------------------------  */
 /* ABOUT SECTION */
 .column-container {
