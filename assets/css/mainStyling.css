@@ -17,18 +17,18 @@ header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: #ffffff;
-    width: 65%;
     z-index: 1000;
     justify-self: center;
 }
 
 .navbar {
     position: fixed;
+    width: 65%;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
