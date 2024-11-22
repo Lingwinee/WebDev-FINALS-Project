@@ -4,7 +4,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding-top: 20px;
+  top: 0px;
+  margin-top: 0px;
   height: 100vh;
   display: flex;
   align-items: center;
