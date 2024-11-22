@@ -14,6 +14,11 @@
   gap: 20px;
   padding: 20px;
 }
+.Home-Title{
+  position: fixed;
+  left: 20%;
+  top: 30%;
+}
 
 /* ABOUT SECTION */
 .column-container {
