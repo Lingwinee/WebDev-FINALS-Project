@@ -40,8 +40,8 @@
 }
 
 .Home-Figure-Container img{
-  max-width: 1101px;
-  max-height: 540px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* -------------------------------------------------------------------------------  */
