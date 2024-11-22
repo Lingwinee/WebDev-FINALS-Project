@@ -1,7 +1,8 @@
 /*HOME SECTION*/
 #home {
-  background-image: url('assets/imgs/HOME-background.jpg') no-repeat center center/cover; 
-
+  background-image: url('assets/imgs/HOME-background.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   padding-top: 20px;
   height: 100vh;
