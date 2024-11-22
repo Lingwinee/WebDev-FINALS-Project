@@ -2,7 +2,7 @@
 
 This portfolio is a showcase of my work and projects. Feel free to explore and learn from it.
 
-[Preview Website]([https://lingwinee.github.io/Lingwinee-Portfolio/](https://lingwinee.github.io/WebDev-FINALS-Project/))
+[Preview Website](https://lingwinee.github.io/Lingwinee-Portfolio/](https://lingwinee.github.io/WebDev-FINALS-Project/))
 
 ## License
 
