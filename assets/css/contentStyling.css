@@ -36,7 +36,7 @@
 }
 
 /* EXAMPLE BOX CONTAINERS */
-/* .about-me, .skills-container, .hobbies-container, .contact-info {
+.about-me, .skills-container, .hobbies-container, .contact-info {
   flex: 1;
   margin: 5px 10px;
   padding: 10px;
@@ -47,17 +47,11 @@
   min-width: 250px; 
 }
   
-.skills-list {
+/* .skills-list {
   list-style-type: none;
 }
 
 .skills-list li {
   font-size: 1.2rem;
   margin: 10px 0;
-}
-
-.education-item, .work-item {
-  margin: 20px 0;
-}
-
-   */
+} */
