@@ -2,7 +2,8 @@
 #home {
   /* background: url('assets/imgs/HOME-background.jpg') no-repeat center center/cover; */
   background-image: image('assets/imgs/HOME-background.jpg') no-repeat center center/cover;
-  top: 0px;
+  position: relative;
+  padding-top: 20px;
   height: 100vh;
   display: flex;
   align-items: center;
