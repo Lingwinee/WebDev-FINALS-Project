@@ -45,6 +45,9 @@
 }
 
 /* -------------------------------------------------------------------------------  */
+#about {
+  background-color: inherit;
+}
 /* ABOUT SECTION */
 .column-container {
   padding-top: 10px;
