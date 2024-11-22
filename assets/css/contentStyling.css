@@ -31,8 +31,9 @@
   font-size: large;
 }
 
-.Home-Figure-Container img{
-  size: 50px;
+.Home-Figure-Container {
+  width: 550px;
+  height: 550px;
 }
 
 /* -------------------------------------------------------------------------------  */
