@@ -1,6 +1,6 @@
 /*HOME SECTION*/
 #home {
-  background: url('assets/imgs/HOME-background.jpeg') no-repeat center center/cover;
+  background: url('assets/imgs/HOME-background.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
