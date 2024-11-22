@@ -27,11 +27,12 @@
   
 } */
 .IKO-Bin-Title{
-  font-size: larger !important;
+  font-size: 4rem !important;
 }
 .IKO-Bin-Subtext{
-  font-size: large;
+  font-size: 2.5rem !important;
 }
+
 .Home-Figure-Container {
   display: flex;
   justify-content: center; /* Centers the image horizontally */
