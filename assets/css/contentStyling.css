@@ -3,7 +3,7 @@
   background: url('assets/imgs/HOME-background.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
-  justify-content: center;
+
   align-items: center;
   flex-direction: column;
 }
