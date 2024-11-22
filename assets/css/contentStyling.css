@@ -17,12 +17,12 @@
   padding: 20px;
 }
 .Home-Title{
-  left: 20%;
-  top: 30%;
-}
-.IKO-Bin-Title .IKO-Bin-Subtext .IKO-Bin-Text{
+
   text-align: left;
 }
+/* .IKO-Bin-Title .IKO-Bin-Subtext .IKO-Bin-Text{
+  
+} */
 .IKO-Bin-Title{
   font-size: larger;
 }
