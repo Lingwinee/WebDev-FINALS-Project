@@ -20,7 +20,11 @@
     background-color: #ffffff;
 }
 
-/*TEXT COLOR*/
+/**/
+.dark-mode .navbar {
+    box-shadow: 0 3px 12px rgba(255, 255, 255, 0.4);
+}
+
 .dark-mode .nav-list li a {
     color: #ffffff;
 }
