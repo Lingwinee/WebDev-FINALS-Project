@@ -16,6 +16,8 @@
   flex-direction: row;
   gap: 100px;
   padding: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .Home-Title{
   display: ruby;
