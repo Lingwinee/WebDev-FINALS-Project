@@ -24,7 +24,7 @@
   
 } */
 .IKO-Bin-Title{
-  font-size: larger;
+  font-size: larger !important;
 }
 .IKO-Bin-Subtext{
   font-size: large;
