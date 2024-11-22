@@ -32,6 +32,12 @@
 .IKO-Bin-Subtext{
   font-size: large;
 }
+.Home-Figure-Container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  flex-wrap: wrap; /* Allows the content to wrap */
+}
 
 .Home-Figure-Container img{
   max-width: 1101px;
