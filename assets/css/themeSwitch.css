@@ -4,7 +4,7 @@
     right: 5%;
     width: 40px;
     height: 20px;
-    background-color: #383838;
+    background-color: #000000;
     border-radius: 10px;
     border: 1px solid;
     cursor: pointer;
@@ -34,7 +34,7 @@
 }
 
 .dark-mode {
-    background-color: #1f1f1f;
+    background-color: #1d1d1d;
     color: #fff;
 }
 
