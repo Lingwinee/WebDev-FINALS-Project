@@ -74,21 +74,27 @@ var countrySelect1 = document.querySelector('.country1'),
   stateSelect = document.querySelector('.state'),
   citySelect = document.querySelector('.city');
 
-function loadCountries(selectElement) {
-  let apiEndPoint = config.cUrl;
-
-  fetch(apiEndPoint, { headers: { "X-CSCAPI-KEY": config.ckey } })
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(country => {
-        const option = document.createElement('option');
-        option.value = country.iso2;
-        option.textContent = country.name;
-        selectElement.appendChild(option);
-      });
-    })
-    .catch(error => console.error('Error loading countries:', error));
-}
+  function loadCountries(selectElement) {
+    if (!(selectElement instanceof HTMLSelectElement)) {
+      console.error('Invalid selectElement:', selectElement);
+      return; // Exit if the element is not a valid <select>
+    }
+  
+    let apiEndPoint = config.cUrl;
+  
+    fetch(apiEndPoint, { headers: { "X-CSCAPI-KEY": config.ckey } })
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(country => {
+          const option = document.createElement('option');
+          option.value = country.iso2;
+          option.textContent = country.name;
+          selectElement.appendChild(option);
+        });
+      })
+      .catch(error => console.error('Error loading countries:', error));
+  }
+  
 
 function initialize() {
   loadCountries(countrySelect1);
