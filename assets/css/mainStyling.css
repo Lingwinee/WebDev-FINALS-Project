@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: color 0.4s ease;
+
+}
+
+body {
+    font-family: 'Roboto', 'Lato', Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: #313332;
+}
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    justify-self: center;
+}
+
+.navbar {
+    position: fixed;
+    /* FIX THE POSITION OF THE NAV */
+    left: 50%;
+    transform: translateX(-50%);
+    /* ---- */
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* border-radius: 5rem; */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+}
+
+.nav-logo{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 10%;
+    height: auto;
+    width: auto;
+}
+.nav-logo a img{
+    padding-top: 5px;
+    height: 70px;
+    width: auto;
+}
+.nav-logo a{
+    text-decoration-line: none;
+}
+.nav-logo h1 {
+    padding-top: 8px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    color: #257539;
+    font-family: "Hurricane", cursive;
+    font-size: 2.5rem;
+    font-style: normal;
+    margin-left: 10px;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: auto;
+    align-items: center; /* Aligns the items vertically */
+}
+
+
+.nav-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(32, 32, 32);
+    padding: 10px;
+    transition: color 0.5s ease;
+}
+
+.nav-list li a:hover {
+    background-color: #a1a1a1;
+    border-radius: 20px;
+}
+
+.dark-mode .nav-list li a:hover {
+    background-color: #c0c0c0;
+    border-radius: 20px;
+}
+
+/* Section Styles */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* CSS for section animations */
+
+/* CSS for section animations */
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add scrolling up and down animations */
+
+section.visible.up {
+    animation: slideUp 0.5s ease;
+}
+
+section.visible.down {
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+
+h3 {
+    padding-bottom: 5px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%; 
+    height: auto;
+}
+
+hr {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px dashed #61d387;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #76a94d;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #679267;
+    color: white;
+    text-align: center;
+}
+
+/* MOBILE COMPATIBILITY */
+@media (max-width: 1280px) {
+    /* Adjust the header styles */
+    header {
+        position: static;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 0;
+    }
+
+    .navbar {
+        position: static;
+        width: 100%;
+    }
+
+    .nav-logo {
+        position: static;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 50px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Adjust the section styles */
+    section {
+        padding: 40px 10px;
+        height: auto;
+    }
+
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    /* Adjust the footer styles */
+    footer {
+        padding: 10px;
+    }
+}
