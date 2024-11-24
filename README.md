@@ -1,11 +1,9 @@
-# My Portfolio
+# School project FINALS requirement
 
-This portfolio is a showcase of my work and projects. Feel free to explore and learn from it.
+This website  is a showcase of my work. Feel free to explore and learn from it.
 
 [Preview Website](https://lingwinee.github.io/WebDev-FINALS-Project/)
 
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
-
-!CC BY-NC 4.0
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
