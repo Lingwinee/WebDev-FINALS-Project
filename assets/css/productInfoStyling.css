@@ -1,16 +1,11 @@
 #info{
-    background-image: url('../imgs/subpages-background1.svg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #e6ffeb;
     position: relative;
     top: 0px;
     margin-top: 0px;
-    height: 100vh;
     justify-content: center;
     flex-direction: column;
+    height: auto;
 }
-
 
 /* Section container */
 .info-container {
@@ -18,15 +13,18 @@
     flex-direction: row; /* Align image and text side by side */
     justify-content: left;
     padding: 20px;
+    padding: 50px;
     padding-left: 80px;
     background-color: #ecf8e5; /* Light green background */
-    border-radius: 8px;
+    border-radius: 30px;
     margin-left: 10%;
     margin-right: 10%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-height: 100%;
     overflow-y: auto;
 }
+.dark-mode .info-container{
+    background-color: #174723;
+  }
 
 .hr-info{
     width: 30px !important;
@@ -41,6 +39,11 @@
     padding-right: 20px;
     text-align: left;
     max-height: 100%;
+}
+.info-text-sub {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .info-iden{
@@ -68,9 +71,6 @@
 .info-image img {
     max-width: 600px;
     height: auto;
-
-    transform: translateY(-10%);
-
 }
 
 hr {
@@ -83,11 +83,11 @@ hr {
     position: relative;
     top: 0px;
     margin-top: 0px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: auto;
 }
 /* Add a container for the cards */
 .features-cards-container {
@@ -110,7 +110,7 @@ hr {
     flex-direction: column;
     padding: 15px;
     padding-bottom: 40px;
-    margin-top: 50px;
+    margin-top: 20px;
     height: auto;
     max-height: 80%;
 }
@@ -132,31 +132,39 @@ hr {
 
 /* ----------------------------------------------------------------------  */
 #video{
-    background-image: url('../imgs/subpages-background2.svg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: #e6ffeb;
     position: relative;
+    height: auto;
     top: 0px;
     margin-top: 0px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.video-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+}
+.video-container video {
+    border-radius: 20px;
+}
+.return-button-container {
+    padding: 20px;
+}
+
 /* ---------------------------------------------------------------------- */
+
 /* Button styles */
 button {
-    background-color: #88c057; /* Green button color */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    background-color: #257539;
     font-size: 1rem;
-    cursor: pointer;
-    margin-top: 10px;
+    color: #ffffff;
 }
 
 button:hover {
