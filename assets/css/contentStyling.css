@@ -643,6 +643,10 @@
   flex-direction: column;
 }
 
+.contact-table{
+border: solid 1px black;
+}
+
 .Contact-Us-Title {
   color: #257539;
   font-family: "Hurricane", cursive;
@@ -691,12 +695,42 @@
   justify-self: center;
   margin-top: 20px;
 }
+#password-match-error,
+#password-length-error,
+#password-uppercase-error,
+#password-lowercase-error {
+     display: none;
+     margin-top: 5px;
+}
+#password-match-error,
+#password-length-error {
+     color: red;
+}
+#password-uppercase-error,
+#password-lowercase-error {
+     color: orange;
+}
+#password-match-error:visible,
+#password-length-error:visible {
+     display: block;
+}
+#password-uppercase-error:visible,
+#password-lowercase-error:visible {
+     display: block;
+}
+#password-match-error:visible,
+#password-length-error:visible{
+   display: block;
+}
 
 label {
   font-size: 1.2rem;
   font-weight: 700;
 }
-
+select {
+  border: none;
+  border-bottom: solid 2px #1f7927;
+}
 input{
   border: none;
   border-bottom: solid 2px #1f7927;
