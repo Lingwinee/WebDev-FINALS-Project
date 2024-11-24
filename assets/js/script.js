@@ -11,6 +11,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+// Intersection Observer for each section on each page
+const sections = document.querySelectorAll('section');
+sections.forEach(section => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(section);
+});
 
 
 // Theme switcher on each page
@@ -63,140 +78,152 @@ document.querySelector('form').addEventListener('submit', function(event) {
     console.log('Form submitted successfully!');
   }
 });
-
-var config = {
+const config = {
   cUrl: 'https://api.countrystatecity.in/v1/countries',
   ckey: 'V1cwZ2V5MTAwdDZDZ2lMMkt5b1JaWFZ6R3g2dGJOVFBUbVY1dExhNQ=='
 };
 
-var countrySelect1 = document.querySelector('.country1'),
-  countrySelect2 = document.querySelector('.country2'),
-  stateSelect = document.querySelector('.state'),
-  citySelect = document.querySelector('.city');
+const countrySelect1 = document.querySelector('.country1');
+const countrySelect2 = document.querySelector('.country2');
+const stateSelect = document.querySelector('.state');
+const citySelect = document.querySelector('.city');
 
-  function loadCountries(selectElement) {
-    if (!(selectElement instanceof HTMLSelectElement)) {
-      console.error('Invalid selectElement:', selectElement);
-      return; // Exit if the element is not a valid <select>
-    }
-  
-    let apiEndPoint = config.cUrl;
-  
-    fetch(apiEndPoint, { headers: { "X-CSCAPI-KEY": config.ckey } })
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(country => {
-          const option = document.createElement('option');
-          option.value = country.iso2;
-          option.textContent = country.name;
-          selectElement.appendChild(option);
-        });
-      })
-      .catch(error => console.error('Error loading countries:', error));
+/**
+ * Fetch data from the given API endpoint.
+ * @param {string} url - API URL
+ * @returns {Promise<any>} - JSON response
+ */
+async function fetchData(url) {
+  try {
+    const response = await fetch(url, { headers: { "X-CSCAPI-KEY": config.ckey } });
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error(`Error fetching data from ${url}:`, error);
+    return null; // Return null to signify an error
   }
-  
+}
 
+/**
+ * Populate a <select> element with data.
+ * @param {HTMLSelectElement} selectElement - The select element to populate
+ * @param {Array} data - Data to populate with
+ * @param {string} valueKey - Key for the option's value
+ * @param {string} textKey - Key for the option's display text
+ */
+/**
+ * Populate a <select> element with data, sorted in descending order.
+ * @param {HTMLSelectElement} selectElement - The select element to populate
+ * @param {Array} data - Data to populate with
+ * @param {string} valueKey - Key for the option's value
+ * @param {string} textKey - Key for the option's display text
+ */
+function populateSelect(selectElement, data, valueKey, textKey) {
+  if (!(selectElement instanceof HTMLSelectElement)) return;
+
+  selectElement.innerHTML = '<option value="">Select</option>'; // Reset options
+  
+  if (data && data.length > 0) {
+    // Sort the data in descending order by the textKey
+    const sortedData = data.sort((a, b) => b[textKey].localeCompare(a[textKey]));
+
+    sortedData.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item[valueKey];
+      option.textContent = item[textKey];
+      selectElement.appendChild(option);
+    });
+  }
+}
+
+
+/**
+ * Load countries into the given select element.
+ * @param {HTMLSelectElement} selectElement - The select element
+ */
+async function loadCountries(selectElement) {
+  const countries = await fetchData(config.cUrl);
+  if (countries) populateSelect(selectElement, countries, 'iso2', 'name');
+}
+
+/**
+ * Load states for the selected country.
+ */
+async function loadStates() {
+  const selectedCountryCode = countrySelect1.value;
+  resetSelect(stateSelect);
+  resetSelect(citySelect);
+
+  if (!selectedCountryCode) return;
+
+  const states = await fetchData(`${config.cUrl}/${selectedCountryCode}/states`);
+  if (states) populateSelect(stateSelect, states, 'iso2', 'name');
+
+  // Enable state selector
+  toggleSelect(stateSelect, true);
+  toggleSelect(citySelect, false);
+}
+
+/**
+ * Load cities for the selected state.
+ */
+async function loadCities() {
+  const selectedCountryCode = countrySelect1.value;
+  const selectedStateCode = stateSelect.value;
+  resetSelect(citySelect);
+
+  if (!selectedCountryCode || !selectedStateCode) return;
+
+  const cities = await fetchData(
+    `${config.cUrl}/${selectedCountryCode}/states/${selectedStateCode}/cities`
+  );
+  if (cities) populateSelect(citySelect, cities, 'name', 'name');
+
+  // Enable city selector
+  toggleSelect(citySelect, true);
+}
+
+/**
+ * Reset a <select> element.
+ * @param {HTMLSelectElement} selectElement - The select element to reset
+ */
+function resetSelect(selectElement) {
+  if (selectElement instanceof HTMLSelectElement) {
+    selectElement.innerHTML = '<option value="">Select</option>';
+    toggleSelect(selectElement, false);
+  }
+}
+
+/**
+ * Enable or disable a <select> element.
+ * @param {HTMLSelectElement} selectElement - The select element
+ * @param {boolean} isEnabled - Whether to enable the element
+ */
+function toggleSelect(selectElement, isEnabled) {
+  selectElement.disabled = !isEnabled;
+  selectElement.style.pointerEvents = isEnabled ? 'auto' : 'none';
+}
+
+/**
+ * Initialize the app.
+ */
 function initialize() {
+  // Load countries into both country selectors
   loadCountries(countrySelect1);
   loadCountries(countrySelect2);
 
-  // Disable and style state and city selectors initially
-  stateSelect.disabled = true;
-  citySelect.disabled = true;
-  stateSelect.style.pointerEvents = 'none';
-  citySelect.style.pointerEvents = 'none';
+  // Disable state and city selectors initially
+  toggleSelect(stateSelect, false);
+  toggleSelect(citySelect, false);
 }
 
-// Call initialize when the DOM is fully loaded
+// Event listeners
 document.addEventListener('DOMContentLoaded', initialize);
-
-
-
-function loadStates() {
-  // Enable state select and reset its options
-  stateSelect.disabled = false;
-  citySelect.disabled = true;
-  stateSelect.style.pointerEvents = 'auto';
-  citySelect.style.pointerEvents = 'none';
-
-  const selectedCountryCode = countrySelect1.value; // Use the correct variable
-  stateSelect.innerHTML = '<option value="">Select State</option>'; // Clear existing states
-  citySelect.innerHTML = '<option value="">Select City</option>'; // Clear existing cities
-
-  if (!selectedCountryCode) return; // Return if no country is selected
-
-  fetch(`${config.cUrl}/${selectedCountryCode}/states`, {
-    headers: { "X-CSCAPI-KEY": config.ckey }
-  })
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(state => {
-        const option = document.createElement('option');
-        option.value = state.iso2;
-        option.textContent = state.name;
-        stateSelect.appendChild(option);
-      });
-    })
-    .catch(error => console.error('Error loading states:', error));
-}
-
-function loadCities() {
-  // Enable city select and reset its options
-  citySelect.disabled = false;
-  citySelect.style.pointerEvents = 'auto';
-
-  const selectedCountryCode = countrySelect1.value; // Use the correct variable
-  const selectedStateCode = stateSelect.value;
-  citySelect.innerHTML = '<option value="">Select City</option>'; // Clear existing cities
-
-  if (!selectedStateCode) return; // Return if no state is selected
-
-  fetch(`${config.cUrl}/${selectedCountryCode}/states/${selectedStateCode}/cities`, {
-    headers: { "X-CSCAPI-KEY": config.ckey }
-  })
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(city => {
-        const option = document.createElement('option');
-        option.value = city.name; // Use city name as value
-        option.textContent = city.name;
-        citySelect.appendChild(option);
-      });
-    })
-    .catch(error => console.error('Error loading cities:', error));
-}
-
-// Add event listeners to detect changes
-countrySelect1.addEventListener('change', loadStates); // When a country is selected
-stateSelect.addEventListener('change', loadCities); // When a state is selected
-
-window.onload = loadCountries;
+countrySelect1.addEventListener('change', loadStates);
+stateSelect.addEventListener('change', loadCities);
+ 
 
 // ------------------------------------------------------------------------------------------------
 
-// Intersection Observer for each section on each page
-const sections = document.querySelectorAll('section');
-sections.forEach(section => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  }, { threshold: 0.5 });
-
-  observer.observe(section);
-});
-
-// Create an Intersection Observer instance
-const observer = new IntersectionObserver(observerCallback, {
-  threshold: 0.5, // The section needs to be at least 50% visible to trigger the animation
-});
 
 
-// Observe each section
-sections.forEach(section => {
-  observer.observe(section);
-});
