@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: color 0.4s ease;
+
+}
+
+body {
+    font-family: 'Roboto', 'Lato', Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: #313332;
+}
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    justify-self: center;
+}
+
+.navbar {
+    position: fixed;
+    /* FIX THE POSITION OF THE NAV */
+    left: 50%;
+    transform: translateX(-50%);
+    /* ---- */
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* border-radius: 5rem; */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+}
+
+.nav-logo{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 10%;
+    height: auto;
+    width: auto;
+}
+.nav-logo a img{
+    padding-top: 5px;
+    height: 70px;
+    width: auto;
+}
+.nav-logo a{
+    text-decoration-line: none;
+}
+.nav-logo h1 {
+    padding-top: 8px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    color: #257539;
+    font-family: "Hurricane", cursive;
+    font-size: 2.5rem;
+    font-style: normal;
+    margin-left: 10px;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: auto;
+    align-items: center; /* Aligns the items vertically */
+}
+
+
+.nav-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(32, 32, 32);
+    padding: 10px;
+    transition: color 0.5s ease;
+}
+
+.nav-list li a:hover {
+    background-color: #a1a1a1;
+    border-radius: 20px;
+}
+
+
+/* Section Styles */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+h3 {
+    padding-bottom: 5px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%; 
+    height: auto;
+}
+
+hr {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px dashed #61d387;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #76a94d;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #E2EFD9;
+    color: #313332;
+    text-align: center;
+}
+    
+footer .foot-row img {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.footer .foot-row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    font-size:1rem;
+}
+    
+.footer .foot-row a{
+    text-decoration:none;
+    color: #313332;
+}
+    
+.footer .foot-row a:hover{
+    color: #61d387;
+}
+    
+.footer .row ul{
+    width:100%;
+}
+    
+.footer .foot-row ul li{
+    display:inline-block;
+    margin:0px 30px;
+}
+    
+.footer .foot-row a i{
+    font-size:2em;
+    margin:0% 1%;
+}
+.footer .foot-hr{
+    justify-self: center;
+    width: 70%;
+    border: 0.1px solid #76a94d ;
+}
+    
+
+/* MOBILE COMPATIBILITY */
+@media (max-width: 1280px) {
+    /* Adjust the header styles */
+    header {
+        position: static;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 0;
+    }
+
+    .navbar {
+        position: static;
+        width: 100%;
+    }
+
+    .nav-logo {
+        position: static;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 50px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Adjust the section styles */
+    section {
+        padding: 40px 10px;
+        height: auto;
+    }
+
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    /* Adjust the footer styles */
+    .footer{
+        text-align:left;
+        padding:5%;
+    }
+    .footer .row ul li{
+        display:block;
+        margin:10px 0px;
+        text-align:left;
+    }
+    .footer .row a i{
+        margin:0% 3%;
+    }
+}

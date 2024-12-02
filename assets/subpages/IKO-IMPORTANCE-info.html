@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKO-Bin</title>
+    <link rel="stylesheet" href="../css/mainStyling.css">
+    <link rel="stylesheet" href="../css/contentStyling.css">
+    <link rel="stylesheet" href="../css/moreInfoStyling.css">
+    <link rel="icon" type="image/x-icon" href="../imgs/IKO-logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Hurricane&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="../../index.html"><img src="../imgs/IKO-logo.svg" alt="web-logo"></a>
+                <a href="../../index.html"><h1>IKO-Bin</h1></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li>|</li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="hr-about-contain">
+                <hr class="hr-about">
+            </div>
+            <div class="about-text">
+                <h3 class="about-iden">Why is IKO-Bin so important</h3>
+                <div class="about-text-sub">
+                    <h1 class="about-Title">Impacts of wastes globally</h1>
+                    <p>Global waste generation is projected to increase dramatically, with municipal solid waste expected to rise from 2.1 billion tonnes in 2023 to 3.8 billion tonnes by 2050 (United Nations Environment Programme [UNEP], 2024). The mismanagement of waste leads to significant environmental pollution, with contaminants affecting ecosystems and public health alike (Earth Day, 2024). Furthermore, improper waste disposal contributes to greenhouse gas emissions, with landfills producing approximately 20% of human-driven methane emissions (Earth Day, 2024). ​Without urgent action, the economic costs associated with waste management could escalate to as much as USD 640.3 billion annually by 2050, highlighting the need for sustainable waste practices (UNEP, 2024).​ </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="details">
+        <div class="details-container">
+            <p>Improper waste disposal, leading to waste accumulation, has several impacts such as land pollution, water pollution, air pollution, climate change, disease, plant death, loss of habits, and lower biodiversity (Smith, 2022). A study by Rupasinghe & Pieris (2023) that investigated the environmental impacts of waste accumulation at a garbage dump in Sri Lanka also emphasized the resulting environmental imbalances, air pollution, groundwater and soil contamination, and threats to human and animal well-being. Notably, vulnerable groups such as children are at an increased risk of adverse health outcomes due to poor waste accumulation and management practices (WHO, 2020). This issue does not only impact environmental sustainability, but also results in a range of health risks from water contamination, and air-quality degradation. These risks disproportionately affect marginalized and vulnerable communities, thus, triggering an increase in economic costs related to healthcare expenditures (Suk et al., 2023). A study by Shershneva (2022) also suggested that the consequences of waste accumulation encompass not only environmental issues but also economic considerations, after undergoing an analysis of different countries based on their progressiveness in terms of waste management. The aforementioned impacts of waste accumulation, ranging from environmental degradation, increased health risks, and economic challenges, highlight the need for more comprehensive and efficient waste management and collection practices.</p>
+            <p>Municipal waste management has a significant impact on the environment and humans that need to be quantified and mitigated (Rossi et al., 2022). In a study conducted in Italy, the environmental impact of three different waste collection methods (street bins, door-to-door, and a smart bin system) across six waste categories (paper, plastics, glass, metal, organic materials, and residual waste) was analyzed, revealing that smart bins are more environmentally effective due to the better waste quality, reducing environmental risks by 60% during the transport phase compared to the door-to-door system (Rossi et al., 2022). Similarly, in a study conducted in Dhanbad City, Jharkhand, India, researchers explored five waste collection and transportation scenarios, in which the current system, which was the first scenario, showed the highest environmental impact, primarily due to landfilling, and introducing a material recovery facility (MRF) in the second scenario significantly reduced overall impacts by approximately 971% compared to the baseline, assuming a 75% efficiency in recycling plastic waste sorting, and the third scenario, which incorporated composting, further reduced impacts by approximately 1052%. However, in the fourth scenario, the introduction of electric tipper trucks was not able to yield any significant reductions, for it was only in the fifth scenario, which considered the future electricity mix, that using electric tippers showed notable benefits, resulting in a decrease of approximately 1063% compared to the baseline scenario and also offered substantial economic advantages (Aryan et al., 2023). The evaluation of waste collection methods highlights the potential for environmentally effective practices, such as smart bins and material recovery facilities, to reduce negative environmental impacts while also contributing economic advantages.</p>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="foot-row">
+                <a href="#"><img src="../imgs/foot-facebook-svgrepo-com.svg" alt="facebook"></a>
+                <a href="#"><img src="../imgs/foot-instagram-svgrepo-com.svg" alt="Instagram"></a>
+                <a href="#"><img src="../imgs/foot-github-142-svgrepo-com.svg" alt="Github"></a>
+                <a href="#"><img src="../imgs/foot-youtube-svgrepo-com.svg" alt="Youtube"></a>
+            </div>
+        
+            <div class="foot-row">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li>|</li>
+                    <li><a href="#details">Details</a></li>
+                    <li>|</li>
+                    <li><a href="../../index.html">Home</a></li>
+                </ul>
+            </div>
+            <hr class="foot-hr">
+            <div class="foot-row">
+                <p>IKO-Bin Copyright © 2024 IKO-Bin - All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement.id != 'our-app') {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }else{
+                targetElement.scrollIntoView({ behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>

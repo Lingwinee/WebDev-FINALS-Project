@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKO-Bin</title>
+    <link rel="stylesheet" href="../css/mainStyling.css">
+    <link rel="stylesheet" href="../css/contentStyling.css">
+    <link rel="stylesheet" href="../css/moreInfoStyling.css">
+    <link rel="icon" type="image/x-icon" href="../imgs/IKO-logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Hurricane&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="../../index.html"><img src="../imgs/IKO-logo.svg" alt="web-logo"></a>
+                <a href="../../index.html"><h1>IKO-Bin</h1></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li>|</li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="hr-about-contain">
+                <hr class="hr-about">
+            </div>
+            <div class="about-text">
+                <h3 class="about-iden">Why should IKO-Bin exist</h3>
+                <div class="about-text-sub">
+                    <h1 class="about-Title">Achieve a waste free streets</h1>
+                    <p> Globally, an estimated 4.5 trillion pounds of garbage is generated each year, with projections indicating a rise to 7.5 trillion pounds by 2050 (World Bank, 2018). Furthermore, approximately 11.2 billion tons of solid waste is collected annually (UNEP, 2019). Traditional waste management involves routine collection from residential bins, but a lack of adherence to a consistent schedule and failure to monitor fill levels can lead to frequent overflow, encouraging microbial growth, attracting animals, and providing breeding grounds for insects (Gangwani et al., 2019). With the continual increase in global waste, there is an immediate need for more effective waste management and collection systems to address environmental risks and hazards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details">
+        <div class="details-container">
+            <p>Due to poor waste disposal methods, communities all around the globe suffer from poor, outdated, and illegal methods for the disposal of hazardous and urban waste (Oyedotun et al., 2021). Overconsumption, a lack of recycling, and inappropriate disposal methods all contribute to the accumulation of garbage (Texas Disposal Systems, 2023). The situation is particularly concerning in the Philippines, where waste production is anticipated to rise in the coming years (Coracero et al., 2021). Weak law enforcement, a shortage of sanitary landfills, a growing volume of solid waste, and improper disposal practices are all issues that the nation struggles with (Indonesian Journal of Social and Environmental Issues, 2021). A significant factor in the waste management crisis is the scarcity of appropriate recycling infrastructure and waste management systems (Cacho & Medina, 2021). These difficulties underscore the pressing need for global-scale, comprehensive, and sustainable waste management solutions.</p>
+            <p>​IKO-Bin, an enhanced street dumpster, is vital for achieving waste-free streets due to its innovative design that promotes efficient waste management.​ These smart bins are equipped with technology that helps monitor waste levels and optimize collection routes, reducing the frequency of pickups and minimizing environmental impact (PLAEX Technologies, 2023). By encouraging proper waste segregation through dedicated compartments, IKO-Bin enhances recycling efforts and decreases contamination in recycling streams (PLAEX Technologies, 2023). Moreover, using these bins contributes to cleaner urban environments, as they help eliminate overflowing waste, which can attract pests and create unsightly conditions (Smart Bins, 2024). Improved aesthetics through strategically placed IKO-Bins can also foster a sense of community ownership and responsibility toward maintaining cleanliness in public spaces (Smart Bins, 2024). Ultimately, implementing enhanced street dumpsters like IKO-Bin supports sustainable urban living and helps cities effectively combat waste-related challenges (Innovative Waste Solutions, 2024).</p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="foot-row">
+                <a href="#"><img src="../imgs/foot-facebook-svgrepo-com.svg" alt="facebook"></a>
+                <a href="#"><img src="../imgs/foot-instagram-svgrepo-com.svg" alt="Instagram"></a>
+                <a href="#"><img src="../imgs/foot-github-142-svgrepo-com.svg" alt="Github"></a>
+                <a href="#"><img src="../imgs/foot-youtube-svgrepo-com.svg" alt="Youtube"></a>
+            </div>
+        
+            <div class="foot-row">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li>|</li>
+                    <li><a href="#details">Details</a></li>
+                    <li>|</li>
+                    <li><a href="../../index.html">Home</a></li>
+                </ul>
+            </div>
+            <hr class="foot-hr">
+            <div class="foot-row">
+                <p>IKO-Bin Copyright © 2024 IKO-Bin - All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement.id != 'our-app') {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }else{
+                targetElement.scrollIntoView({ behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
