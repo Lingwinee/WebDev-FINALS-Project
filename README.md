@@ -2,7 +2,7 @@
 
 This website  is a showcase of my work. Feel free to explore and learn from it.
 
-[Preview Website](https://lingwinee.github.io/WebDev-FINALS-Project/)
+[Preview Website](https://lingwinee.github.io/WebDev-Finals-Project/)
 
 ## License
 
