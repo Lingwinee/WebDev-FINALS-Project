@@ -539,9 +539,15 @@
 
       // Simulate a delay (for demonstration purposes)
       setTimeout(() => {
-        loadingScreen.style.display = "none";
-        mainContent.style.display = "block";
-      }, 2000); // Adjust delay as needed
+        // Add the "hidden" class to trigger the fade-out
+        loadingScreen.classList.add("hidden");
+
+        // Wait for the fade-out animation to complete before hiding the element
+        setTimeout(() => {
+          loadingScreen.style.display = "none";
+          mainContent.style.display = "block";
+        }, 1000);
+      }, 2000);
     });
 
     //SMOOTH SCROLL
