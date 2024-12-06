@@ -18,7 +18,7 @@
 <body>
     <div id="loading-screen">
         <h1>Loading, please wait...</h1>
-      </div>
+    </div>
     <header>
         <nav class="navbar">
             <div class="nav-logo">
@@ -36,7 +36,7 @@
             </ul>
         </nav>
     </header>
-    
+    <main>
     <!-- Home Section -->
     <section id="home">
         
@@ -55,7 +55,7 @@
             </div>
             <div class="Home-Figure-Container">
                 <!-- width="500px" height="200px" -->
-                 <img src="assets/imgs/PRODUCT.png" alt="Home-Product" >
+                <img src="assets/imgs/PRODUCT.png" alt="Home-Product" >
                 <!-- <video autoplay="1" loop="1" controls>
                     <source src="assets/vids/HOME-PAGE-PEODUCT.mov" type="video/mp4">
                 </video> -->
@@ -116,7 +116,6 @@
             </div>
         </div>
     </section>
-
     <!-- Objectives Section -->
     <section id="objective">
         <div class="objectives-Title">
@@ -149,7 +148,6 @@
             </div>
         </div>
     </section>
-
     <!-- Product Section -->
     <section id="product">
         <div class="product-Title">
@@ -232,7 +230,6 @@
             </div>
         </div>
     </section>
-
     <!-- Company Section-->
     <section id="company">
         <h1>Company</h1>
@@ -260,8 +257,6 @@
             </div>
         </div>
     </section>
-    
-
     <!-- Contact Section -->
     <section id="contact">
         <h1 class="Contact-Us-Title">CONTACT</h1>
@@ -393,12 +388,12 @@
                             </td>
                             <td id="CONTACT-3-COLUMN-CONFIRM-PASS">
                                 <div>
-                                     <label for="confirm-password">Confirm Password<br></label>
-                                     <input type="password" id="confirm-password" name="confirm-password" required>
-                                     <span id="password-match-error" >Passwords do not match.</span>
-                                     <span id="password-length-error" >Password must be at least 8 characters long.</span>
-                                     <span id="password-uppercase-error" >Password must contain at least one uppercase letter.</span>
-                                     <span id="password-lowercase-error" >Password must contain at least one lowercase letter.</span>
+                                    <label for="confirm-password">Confirm Password<br></label>
+                                    <input type="password" id="confirm-password" name="confirm-password" required>
+                                    <span id="password-match-error" >Passwords do not match.</span>
+                                    <span id="password-length-error" >Password must be at least 8 characters long.</span>
+                                    <span id="password-uppercase-error" >Password must contain at least one uppercase letter.</span>
+                                    <span id="password-lowercase-error" >Password must contain at least one lowercase letter.</span>
                                 </div>
                             </td>
                         </tr>
@@ -443,263 +438,224 @@
                         </tr>
                     </tfoot>
                 </table>
-                <script>
-                    // ...
-                  
-                    // Form validation
-                    const passwordInput = document.getElementById('password');
-                    const confirmPasswordInput = document.getElementById('confirm-password');
-                    const passwordErrorContainer = document.getElementById('password-error-container');
-                    const passwordMatchError = document.getElementById('password-match-error');
-                    const passwordLengthError = document.getElementById('password-length-error');
-                    const passwordUppercaseError = document.getElementById('password-uppercase-error');
-                    const passwordLowercaseError = document.getElementById('password-lowercase-error');
-                  
-                    passwordInput.addEventListener('input', validatePassword);
-                    confirmPasswordInput.addEventListener('input', validateConfirmPassword);
-                  
-                    function validatePassword() {
-                      const password = passwordInput.value;
-                      const uppercaseRegex = /[A-Z]/;
-                      const lowercaseRegex = /[a-z]/;
-                  
-                      passwordMatchError.style.display = 'none';
-                      passwordLengthError.style.display = 'none';
-                      passwordUppercaseError.style.display = 'none';
-                      passwordLowercaseError.style.display = 'none';
-                  
-                      if (password.length < 8) {
-                        passwordLengthError.style.display = 'block';
-                        return;
-                      }
-                  
-                      if (!uppercaseRegex.test(password)) {
-                        passwordUppercaseError.style.display = 'block';
-                        return;
-                      }
-                  
-                      if (!lowercaseRegex.test(password)) {
-                        passwordLowercaseError.style.display = 'block';
-                        return;
-                      }
-                    }
-                  
-                    function validateConfirmPassword() {
-                      const password = passwordInput.value;
-                      const confirmPassword = confirmPasswordInput.value;
-                  
-                      passwordMatchError.style.display = 'none';
-                  
-                      if (password !== confirmPassword) {
-                        passwordMatchError.style.display = 'block';
-                        return;
-                      }
-                    }
-                  
-                    // ...
-                </script>
             </form>
         </div>
-        
     </section>
-
-    <footer>
-        <div class="footer">
-            <div class="foot-row">
-                <a href="https://www.facebook.com/LejueneYe/"><img src="assets/imgs/foot-facebook-svgrepo-com.svg" alt="facebook"></a>
-                <a href="https://www.instagram.com/lingwinee/"><img src="assets/imgs/foot-instagram-svgrepo-com.svg" alt="Instagram"></a>
-                <a href="https://github.com/Lingwinee"><img src="assets/imgs/foot-github-142-svgrepo-com.svg" alt="Github"></a>
-                <a href="https://www.youtube.com/@Rejuiin_Ye"><img src="assets/imgs/foot-youtube-svgrepo-com.svg" alt="Youtube"></a>
-            </div>
-            <div class="foot-row">
-                <ul>
-                    <li><a href="#contact">Contact us</a></li>
-                    <li>|</li>
-                    <li><a href="#obective">Our Objectives</a></li>
-                    <li>|</li>
-                    <li><a href="#product">Our Product</a></li>
-                    <li>|</li>
-                    <li><a href="#company">Our Company</a></li>
-                    <li>|</li>
-                    <li><a href="#home">Home</a></li>
-                </ul>
-            </div>
-            <hr class="foot-hr">
-            <div class="foot-row">
-                <p>IKO-Bin Copyright © 2024 IKO-Bin - All rights reserved</p>
-            </div>
-        </div>
-
-    </footer>
+            <footer>
+                <div class="footer">
+                <div class="foot-row">
+                    <a href="https://www.facebook.com/LejueneYe/"><img src="assets/imgs/foot-facebook-svgrepo-com.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com/lingwinee/"><img src="assets/imgs/foot-instagram-svgrepo-com.svg" alt="Instagram"></a>
+                    <a href="https://github.com/Lingwinee"><img src="assets/imgs/foot-github-142-svgrepo-com.svg" alt="Github"></a>
+                    <a href="https://www.youtube.com/@Rejuiin_Ye"><img src="assets/imgs/foot-youtube-svgrepo-com.svg" alt="Youtube"></a>
+                </div>
+                <div class="foot-row">
+                    <ul>
+                        <li><a href="#contact">Contact us</a></li>
+                        <li>|</li>
+                        <li><a href="#obective">Our Objectives</a></li>
+                        <li>|</li>
+                        <li><a href="#product">Our Product</a></li>
+                        <li>|</li>
+                        <li><a href="#company">Our Company</a></li>
+                        <li>|</li>
+                        <li><a href="#home">Home</a></li>
+                    </ul>
+                    </div>
+                    <hr class="foot-hr">
+                    <div class="foot-row">
+                        <p>IKO-Bin Copyright © 2024 IKO-Bin - All rights reserved</p>
+                    </div>
+                </div>
+            </footer>
+    </main>
+    <!-- ======================SCRIPT==================== -->
     <script>
-    //LOADING SCREEN
-    window.addEventListener("load", () => {
-      const loadingScreen = document.getElementById("loading-screen");
-      const mainContent = document.getElementById("main-content");
-
-      // Simulate a delay (for demonstration purposes)
-      setTimeout(() => {
-        // Add the "hidden" class to trigger the fade-out
-        loadingScreen.classList.add("hidden");
-
-        // Wait for the fade-out animation to complete before hiding the element
-        setTimeout(() => {
-          loadingScreen.style.display = "none";
-          mainContent.style.display = "block";
-        }, 1000);
-      }, 2000);
-    });
-
-    //SMOOTH SCROLL
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement.id != 'our-app') {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }else{
-            targetElement.scrollIntoView({ behavior: 'smooth'});
+            //LOADING SCREEN
+            window.addEventListener("load", () => {
+            const loadingScreen = document.getElementById("loading-screen");
+            const mainContent = document.getElementById("main-content");
+            // Simulate a delay (for demonstration purposes)
+            setTimeout(() => {
+                // Add the "hidden" class to trigger the fade-out
+                loadingScreen.classList.add("hidden");
+                // Wait for the fade-out animation to complete before hiding the element
+                setTimeout(() => {
+                    loadingScreen.style.display = "none";
+                    mainContent.style.display = "block";
+                    }, 1000);
+                }, 2000);
+            });
+            //SMOOTH SCROLL
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement.id != 'our-app') {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }else{
+                    targetElement.scrollIntoView({ behavior: 'smooth'});
+                    }
+                });
+            });
+            //PASSWORD VALIDATION
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+            const passwordErrorContainer = document.getElementById('password-error-container');
+            const passwordMatchError = document.getElementById('password-match-error');
+            const passwordLengthError = document.getElementById('password-length-error');
+            const passwordUppercaseError = document.getElementById('password-uppercase-error');
+            const passwordLowercaseError = document.getElementById('password-lowercase-error');
+            passwordInput.addEventListener('input', validatePassword);
+            confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+            function validatePassword() {
+                const password = passwordInput.value;
+                const uppercaseRegex = /[A-Z]/;
+                const lowercaseRegex = /[a-z]/;
+                passwordMatchError.style.display = 'none';
+                passwordLengthError.style.display = 'none';
+                passwordUppercaseError.style.display = 'none';
+                passwordLowercaseError.style.display = 'none';
+                if (password.length < 8) {
+                    passwordLengthError.style.display = 'block';
+                    return;
+                }
+                if (!uppercaseRegex.test(password)) {
+                    passwordUppercaseError.style.display = 'block';
+                    return;
+                }
+                if (!lowercaseRegex.test(password)) {
+                    passwordLowercaseError.style.display = 'block';
+                    return;
+                }
             }
-        });
-    });
-    //FORM COUNTRRIES API
-    const config = {
-        cUrl: 'https://api.countrystatecity.in/v1/countries',
-        ckey: 'V1cwZ2V5MTAwdDZDZ2lMMkt5b1JaWFZ6R3g2dGJOVFBUbVY1dExhNQ=='
-    };
-
-    const countrySelect1 = document.querySelector('.country1');
-    const countrySelect2 = document.querySelector('.country2');
-    const stateSelect = document.querySelector('.state');
-    const citySelect = document.querySelector('.city');
-
-    /**
-     * Fetch data from the given API endpoint.
-     * @param {string} url - API URL
-     * @returns {Promise<any>} - JSON response
-     */
-    async function fetchData(url) {
-      try {
-        const response = await fetch(url, { headers: { "X-CSCAPI-KEY": config.ckey } });
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        return await response.json();
-      } catch (error) {
-        console.error(`Error fetching data from ${url}:`, error);
-        return null; // Return null to signify an error
-      }
-    }
-
-    /**
-     * Populate a <select> element with data, sorted in ascending order.
-     * @param {HTMLSelectElement} selectElement - The select element to populate
-     * @param {Array} data - Data to populate with
-     * @param {string} valueKey - Key for the option's value
-     * @param {string} textKey - Key for the option's display text
-     */
-    function populateSelect(selectElement, data, valueKey, textKey) {
-      if (!(selectElement instanceof HTMLSelectElement)) return;
-
-      selectElement.innerHTML = '<option value="">Select</option>'; // Reset options
-    
-      if (data && data.length > 0) {
-        // Sort the data in ascending order by the textKey
-        const sortedData = data.sort((a, b) => a[textKey].localeCompare(b[textKey])); // Change sorting to ascending
-
-        sortedData.forEach(item => {
-          const option = document.createElement('option');
-          option.value = item[valueKey];
-          option.textContent = item[textKey];
-          selectElement.appendChild(option);
-        });
-      }
-    }
-
-
-    /**
-     * Load countries into the given select element.
-     * @param {HTMLSelectElement} selectElement - The select element
-     */
-    async function loadCountries(selectElement) {
-      const countries = await fetchData(config.cUrl);
-      if (countries) populateSelect(selectElement, countries, 'iso2', 'name');
-    }
-
-    /**
-     * Load states for the selected country.
-     */
-    async function loadStates() {
-  const selectedCountryCode = countrySelect1.value;
-  resetSelect(stateSelect);
-  resetSelect(citySelect);
-
-  if (!selectedCountryCode) return;
-
-  const states = await fetchData(`${config.cUrl}/${selectedCountryCode}/states`);
-  if (states) populateSelect(stateSelect, states, 'iso2', 'name');
-
-  // Enable state selector
-  toggleSelect(stateSelect, true);
-  toggleSelect(citySelect, false);
-}
-
-    /**
-     * Load cities for the selected state.
-     */
-    async function loadCities() {
-      const selectedCountryCode = countrySelect1.value;
-      const selectedStateCode = stateSelect.value;
-      resetSelect(citySelect);
-
-      if (!selectedCountryCode || !selectedStateCode) return;
-
-      const cities = await fetchData(
-        `${config.cUrl}/${selectedCountryCode}/states/${selectedStateCode}/cities`
-      );
-      if (cities) populateSelect(citySelect, cities, 'name', 'name');
-
-      // Enable city selector
-      toggleSelect(citySelect, true);
-    }
-
-    /**
-     * Reset a <select> element.
-     * @param {HTMLSelectElement} selectElement - The select element to reset
-     */
-    function resetSelect(selectElement) {
-      if (selectElement instanceof HTMLSelectElement) {
-        selectElement.innerHTML = '<option value="">Select</option>';
-        toggleSelect(selectElement, false);
-      }
-    }
-
-    /**
-     * Enable or disable a <select> element.
-     * @param {HTMLSelectElement} selectElement - The select element
-     * @param {boolean} isEnabled - Whether to enable the element
-     */
-    function toggleSelect(selectElement, isEnabled) {
-      selectElement.disabled = !isEnabled;
-      selectElement.style.pointerEvents = isEnabled ? 'auto' : 'none';
-    }
-
-    /**
-     * Initialize the app.
-     */
-    function initialize() {
-      // Load countries into both country selectors
-      loadCountries(countrySelect1);
-      loadCountries(countrySelect2);
-
-      // Disable state and city selectors initially
-      toggleSelect(stateSelect, false);
-      toggleSelect(citySelect, false);
-    }
-
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', initialize);
-    countrySelect1.addEventListener('change', loadStates);
-    stateSelect.addEventListener('change', loadCities);
+            function validateConfirmPassword() {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                passwordMatchError.style.display = 'none';
+                if (password !== confirmPassword) {
+                    passwordMatchError.style.display = 'block';
+                    return;
+                }
+            }
+            
+            //FORM COUNTRRIES API
+            const config = {
+                cUrl: 'https://api.countrystatecity.in/v1/countries',
+                ckey: 'V1cwZ2V5MTAwdDZDZ2lMMkt5b1JaWFZ6R3g2dGJOVFBUbVY1dExhNQ=='
+            };
+            const countrySelect1 = document.querySelector('.country1');
+            const countrySelect2 = document.querySelector('.country2');
+            const stateSelect = document.querySelector('.state');
+            const citySelect = document.querySelector('.city');
+            /**
+             * Fetch data from the given API endpoint.
+             * @param {string} url - API URL
+             * @returns {Promise<any>} - JSON response
+             */
+            async function fetchData(url) {
+                try {
+                    const response = await fetch(url, { headers: { "X-CSCAPI-KEY": config.ckey } });
+                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                    return await response.json();
+                } catch (error) {
+                    console.error(`Error fetching data from ${url}:`, error);
+                    return null; // Return null to signify an error
+                }
+            }
+            /**
+             * Populate a <select> element with data, sorted in ascending order.
+             * @param {HTMLSelectElement} selectElement - The select element to populate
+             * @param {Array} data - Data to populate with
+             * @param {string} valueKey - Key for the option's value
+             * @param {string} textKey - Key for the option's display text
+             */
+            function populateSelect(selectElement, data, valueKey, textKey) {
+                if (!(selectElement instanceof HTMLSelectElement)) return;
+                selectElement.innerHTML = '<option value="">Select</option>'; // Reset options
+                if (data && data.length > 0) {
+                        // Sort the data in ascending order by the textKey
+                        const sortedData = data.sort((a, b) => a[textKey].localeCompare(b[textKey])); // Change sorting to ascending
+                        sortedData.forEach(item => {
+                        const option = document.createElement('option');
+                        option.value = item[valueKey];
+                        option.textContent = item[textKey];
+                        selectElement.appendChild(option);
+                    });
+                }
+            }
+            /**
+             * Load countries into the given select element.
+             * @param {HTMLSelectElement} selectElement - The select element
+             */
+            async function loadCountries(selectElement) {
+                const countries = await fetchData(config.cUrl);
+                if (countries) populateSelect(selectElement, countries, 'iso2', 'name');
+            }
+            /**
+             * Load states for the selected country.
+             */
+            async function loadStates() {
+                const selectedCountryCode = countrySelect1.value;
+                resetSelect(stateSelect);
+                resetSelect(citySelect);
+                if (!selectedCountryCode) return;
+                const states = await fetchData(`${config.cUrl}/${selectedCountryCode}/states`);
+                if (states) populateSelect(stateSelect, states, 'iso2', 'name');
+                  // Enable state selector
+                toggleSelect(stateSelect, true);
+                toggleSelect(citySelect, false);
+            }
+            /**
+             * Load cities for the selected state.
+             */
+            async function loadCities() {
+                const selectedCountryCode = countrySelect1.value;
+                const selectedStateCode = stateSelect.value;
+                resetSelect(citySelect);
+                if (!selectedCountryCode || !selectedStateCode) return;
+                const cities = await fetchData(
+                `${config.cUrl}/${selectedCountryCode}/states/${selectedStateCode}/cities`
+            );
+            if (cities) populateSelect(citySelect, cities, 'name', 'name');
+            // Enable city selector
+                toggleSelect(citySelect, true);
+            }
+            /**
+             * Reset a <select> element.
+             * @param {HTMLSelectElement} selectElement - The select element to reset
+             */
+            function resetSelect(selectElement) {
+                if (selectElement instanceof HTMLSelectElement) {
+                    selectElement.innerHTML = '<option value="">Select</option>';
+                    toggleSelect(selectElement, false);
+                }
+            }
+            /**
+            * Enable or disable a <select> element.
+            * @param {HTMLSelectElement} selectElement - The select element
+            * @param {boolean} isEnabled - Whether to enable the element
+            */
+            function toggleSelect(selectElement, isEnabled) {
+                electElement.disabled = !isEnabled;
+                selectElement.style.pointerEvents = isEnabled ? 'auto' : 'none';
+            }
+            /**
+             * Initialize the app.
+             */
+            function initialize() {
+                // Load countries into both country selectors
+                loadCountries(countrySelect1);
+                loadCountries(countrySelect2);
+                // Disable state and city selectors initially
+                toggleSelect(stateSelect, false);
+                toggleSelect(citySelect, false);
+            }
+            // Event listeners
+            document.addEventListener('DOMContentLoaded', initialize);
+            countrySelect1.addEventListener('change', loadStates);
+            stateSelect.addEventListener('change', loadCities);
     </script>
 </body>
 </html>
