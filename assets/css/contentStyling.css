@@ -8,6 +8,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-image: url('../imgs/HOME-banner.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .Home-Container {
@@ -17,7 +21,6 @@
   background-position: center;
   display: flex;
   flex-direction: row;
-
   border-radius: 40px;
   padding: 20px;
   margin-left: 15%;
@@ -26,6 +29,7 @@
   align-items: center;
   justify-content: center;
   background-color: #E2EFD9;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
 }
 
 .Home-Title{
@@ -70,34 +74,15 @@
 
 .Home-Figure-Container {
   display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  align-items: center; /* Centers the image vertically */
-  flex-wrap: wrap; /* Allows the content to wrap */
+  justify-content: center;
+  align-items: center; 
+  flex-wrap: wrap; 
 }
 
 .Home-Figure-Container img{
   border-radius: 50px;
   max-width: 500px;
   height: auto;
-}
-
-
-/* MOBILE COMPATIBILITY */
-@media (max-width: 1240px) {
-  .Home-Container {
-    flex-direction: column;
-    gap: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  .Home-Figure-Container {
-    order: 2; /* Change the order of the image container */
-  }
-
-  .Home-Title {
-    order: 1; /* Change the order of the title */
-  }
 }
 
 /* -------------------------------------------------------------------------------  */
@@ -107,6 +92,7 @@
   flex-direction: column;
   padding: 50px;
   height: 120vh;
+  background-image: linear-gradient(to bottom , #40513b,#a7df96,#fefffe, #fefffe); 
 }
 
 .about-container {
@@ -318,7 +304,7 @@
 
 .product-container {
   display: flex;
-  flex-direction: column; /* Align image and text side by side */
+  flex-direction: column; 
   justify-content: center;
   margin-left: 10%;
   margin-right: 10%;
@@ -326,12 +312,12 @@
 }
 .product-container-content {
   display: flex;
-  flex-direction: row; /* Align image and text side by side */
+  flex-direction: row; 
   justify-content: left;
   padding: 20px;
   padding: 50px;
   padding-left: 80px;
-  background-color: #ecf8e5; /* Light green background */
+  background-color: #ecf8e5;
   border-radius: 30px;
 }
 
@@ -389,17 +375,17 @@
 .More-Info-Product-Button-holder {
   margin-top: 20px;
 }
-.More-Info-Product-Button-holder a button {
+.More-Info-Product-Button-holder button {
   border-radius: 50px;
   width: 200px;
-  height: 80px;
+  height: 60px;
   background-color: #257539;
   font-size: 1.5rem;
   color: #ffffff;
 }
  
 
-.More-Info-About-Button-holder a button:hover {
+.More-Info-Product-Button-holder button:hover {
   background-color: #76a94d;
 }
 
@@ -573,7 +559,6 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: #42b45f;
-  background-color: #00000010;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20px;
@@ -588,7 +573,6 @@
   padding: 20px;
   margin-left: 10%;
   margin-right: 10%;
-  background-color: #00000010;
   border-radius: 30px;
   width: 100%;
 }
@@ -599,10 +583,9 @@
   padding: 10px;
   padding-top: 30px;
   padding-bottom: 10px;
-  background-color: #ffffffca;
+  background-color: #e2efd9;
   border-radius: 5px;
   border: solid 1px #cccccc;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
   min-width: 250px;
   max-width: 350px;
 }
@@ -644,9 +627,9 @@ border: solid 1px black;
 
 .Contact-Us-Title {
   color: #257539;
-  font-family: "Hurricane", cursive;
+  font-family: "Hurricane", cursive !important;
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -670,7 +653,7 @@ border: solid 1px black;
 }
 
 .footer-cards {
-  width: 50%;
+  width: 30%;
 }
 .footer-cards textarea{
   padding: 5px;
@@ -733,7 +716,7 @@ input{
   border-collapse: collapse;
   background: white;
   border-radius: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for modern aesthetics */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-table td {
@@ -771,7 +754,10 @@ input{
   border: 1px solid #257539; /* Highlight border on focus */
   box-shadow: 0 0 4px rgba(37, 117, 57, 0.5);
 }
-
+.footer-cards #fav-colour {
+  width: 150px;
+  height: 80px;
+}
 /* Align the Submit and Reset buttons */
 .contact-footer {
   text-align: center;
