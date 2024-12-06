@@ -11,9 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Hurricane&display=swap" rel="stylesheet">
-
+    <script>
+        
+    </script>
 </head>
 <body>
+    <div id="loading-screen">
+        <h1>Loading, please wait...</h1>
+      </div>
     <header>
         <nav class="navbar">
             <div class="nav-logo">
@@ -259,7 +264,7 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h1 class="Contact-Us-Title">Contact</h1>
+        <h1 class="Contact-Us-Title">CONTACT</h1>
         <div class="form-container">
             <form>
                 <table class="contact-table" width="1000px" cellspacing="20px">
@@ -422,6 +427,10 @@
                                         </div>
                                     </div>
                                     <div class="footer-cards">
+                                        <label for="fav-colour">Favourite color</label>
+                                        <input type="color" name="fav-colour" id="fav-colour">
+                                    </div>
+                                    <div class="footer-cards">
                                         <label for="additional-info">Comments <br></label>
                                         <textarea id="additional-info" name="additional-info" rows="5" placeholder="Tell us something about yourself or Ask about our product..."></textarea>
                                     </div>
@@ -497,12 +506,11 @@
     <footer>
         <div class="footer">
             <div class="foot-row">
-                <a href="#"><img src="assets/imgs/foot-facebook-svgrepo-com.svg" alt="facebook"></a>
-                <a href="#"><img src="assets/imgs/foot-instagram-svgrepo-com.svg" alt="Instagram"></a>
-                <a href="#"><img src="assets/imgs/foot-github-142-svgrepo-com.svg" alt="Github"></a>
-                <a href="#"><img src="assets/imgs/foot-youtube-svgrepo-com.svg" alt="Youtube"></a>
+                <a href="https://www.facebook.com/LejueneYe/"><img src="assets/imgs/foot-facebook-svgrepo-com.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com/lingwinee/"><img src="assets/imgs/foot-instagram-svgrepo-com.svg" alt="Instagram"></a>
+                <a href="https://github.com/Lingwinee"><img src="assets/imgs/foot-github-142-svgrepo-com.svg" alt="Github"></a>
+                <a href="https://www.youtube.com/@Rejuiin_Ye"><img src="assets/imgs/foot-youtube-svgrepo-com.svg" alt="Youtube"></a>
             </div>
-        
             <div class="foot-row">
                 <ul>
                     <li><a href="#contact">Contact us</a></li>
@@ -524,6 +532,19 @@
 
     </footer>
     <script>
+    //LOADING SCREEN
+    window.addEventListener("load", () => {
+      const loadingScreen = document.getElementById("loading-screen");
+      const mainContent = document.getElementById("main-content");
+
+      // Simulate a delay (for demonstration purposes)
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+        mainContent.style.display = "block";
+      }, 2000); // Adjust delay as needed
+    });
+
+    //SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -536,6 +557,143 @@
             }
         });
     });
+    //FORM COUNTRRIES API
+    const config = {
+        cUrl: 'https://api.countrystatecity.in/v1/countries',
+        ckey: 'V1cwZ2V5MTAwdDZDZ2lMMkt5b1JaWFZ6R3g2dGJOVFBUbVY1dExhNQ=='
+    };
+
+    const countrySelect1 = document.querySelector('.country1');
+    const countrySelect2 = document.querySelector('.country2');
+    const stateSelect = document.querySelector('.state');
+    const citySelect = document.querySelector('.city');
+
+    /**
+     * Fetch data from the given API endpoint.
+     * @param {string} url - API URL
+     * @returns {Promise<any>} - JSON response
+     */
+    async function fetchData(url) {
+      try {
+        const response = await fetch(url, { headers: { "X-CSCAPI-KEY": config.ckey } });
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return await response.json();
+      } catch (error) {
+        console.error(`Error fetching data from ${url}:`, error);
+        return null; // Return null to signify an error
+      }
+    }
+
+    /**
+     * Populate a <select> element with data, sorted in ascending order.
+     * @param {HTMLSelectElement} selectElement - The select element to populate
+     * @param {Array} data - Data to populate with
+     * @param {string} valueKey - Key for the option's value
+     * @param {string} textKey - Key for the option's display text
+     */
+    function populateSelect(selectElement, data, valueKey, textKey) {
+      if (!(selectElement instanceof HTMLSelectElement)) return;
+
+      selectElement.innerHTML = '<option value="">Select</option>'; // Reset options
+    
+      if (data && data.length > 0) {
+        // Sort the data in ascending order by the textKey
+        const sortedData = data.sort((a, b) => a[textKey].localeCompare(b[textKey])); // Change sorting to ascending
+
+        sortedData.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item[valueKey];
+          option.textContent = item[textKey];
+          selectElement.appendChild(option);
+        });
+      }
+    }
+
+
+    /**
+     * Load countries into the given select element.
+     * @param {HTMLSelectElement} selectElement - The select element
+     */
+    async function loadCountries(selectElement) {
+      const countries = await fetchData(config.cUrl);
+      if (countries) populateSelect(selectElement, countries, 'iso2', 'name');
+    }
+
+    /**
+     * Load states for the selected country.
+     */
+    async function loadStates() {
+  const selectedCountryCode = countrySelect1.value;
+  resetSelect(stateSelect);
+  resetSelect(citySelect);
+
+  if (!selectedCountryCode) return;
+
+  const states = await fetchData(`${config.cUrl}/${selectedCountryCode}/states`);
+  if (states) populateSelect(stateSelect, states, 'iso2', 'name');
+
+  // Enable state selector
+  toggleSelect(stateSelect, true);
+  toggleSelect(citySelect, false);
+}
+
+    /**
+     * Load cities for the selected state.
+     */
+    async function loadCities() {
+      const selectedCountryCode = countrySelect1.value;
+      const selectedStateCode = stateSelect.value;
+      resetSelect(citySelect);
+
+      if (!selectedCountryCode || !selectedStateCode) return;
+
+      const cities = await fetchData(
+        `${config.cUrl}/${selectedCountryCode}/states/${selectedStateCode}/cities`
+      );
+      if (cities) populateSelect(citySelect, cities, 'name', 'name');
+
+      // Enable city selector
+      toggleSelect(citySelect, true);
+    }
+
+    /**
+     * Reset a <select> element.
+     * @param {HTMLSelectElement} selectElement - The select element to reset
+     */
+    function resetSelect(selectElement) {
+      if (selectElement instanceof HTMLSelectElement) {
+        selectElement.innerHTML = '<option value="">Select</option>';
+        toggleSelect(selectElement, false);
+      }
+    }
+
+    /**
+     * Enable or disable a <select> element.
+     * @param {HTMLSelectElement} selectElement - The select element
+     * @param {boolean} isEnabled - Whether to enable the element
+     */
+    function toggleSelect(selectElement, isEnabled) {
+      selectElement.disabled = !isEnabled;
+      selectElement.style.pointerEvents = isEnabled ? 'auto' : 'none';
+    }
+
+    /**
+     * Initialize the app.
+     */
+    function initialize() {
+      // Load countries into both country selectors
+      loadCountries(countrySelect1);
+      loadCountries(countrySelect2);
+
+      // Disable state and city selectors initially
+      toggleSelect(stateSelect, false);
+      toggleSelect(citySelect, false);
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', initialize);
+    countrySelect1.addEventListener('change', loadStates);
+    stateSelect.addEventListener('change', loadCities);
     </script>
 </body>
 </html>
